@@ -15,29 +15,37 @@ from table_view.set_tables import df
 
 
 def main():
-    
     olds = []
     news = []
 
     for i in range(len(df)):
 
         if df.at[i, "rule_id"] == str(1):
-            old = re.findall('''.*href="(.*?)".*''', df.at[i, "string"])[0]
-            filename_split = str(df.at[i, "html"]).split("\\")
-            # 统计点点的数量
-            count_dd = 0  
-            for c in old.split("/"):
-                if c == '..':
-                    count_dd += 1
-            
-            ## html 对应的初始目录
-            head_file = "\\".join(filename_split[0:(len(filename_split) -1 - count_dd)])
-            
-            if old = "":
-                new = ""
+
+            _old = re.findall('''.*href="(.*?)".*''', df.at[i, "string"])
+            i_count = 0
+            for old in [x for x in _old]:
+                i_count += 1 
+                filename_split = str(df.at[i, "html"]).split("\\")
+
+                if i_count > 1:
+                    # 插入一个复制的条目
+                    df = pd.concat([df[0:i], df[i:i+1], df[i+1:]], ignore_index=True)
+
+                # 统计点点的数量
+                count_dd = 0  
+                for c in old.split("/"):
+                    if c == '..':
+                        count_dd += 1
                 
-            olds.append(old)
-            news.append(str(head_file) + "\\" + "\\".join(old.split("/")[count_dd:]))
+                ## html 对应的初始目录
+                head_file = "\\".join(filename_split[0:(len(filename_split) -1 - count_dd)])
+                
+                if old == "":
+                    new = ""
+                    
+                olds.append(old)
+                news.append(str(head_file) + "\\" + "\\".join(old.split("/")[count_dd:]))
 
         if df.at[i, "rule_id"] == str(2):
             old = re.findall('''.*url:\s*"(.*?)".*''', df.at[i, "string"])[0]
@@ -60,6 +68,7 @@ def main():
     df["old"] = olds
     df["new"] = news
     df.to_csv("t.csv")
+
 main()
         
 
