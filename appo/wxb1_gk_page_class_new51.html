@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE-edge,chrome=1">
+	<meta name="viewport" content="width=1366">
+	<title>"WannaCry"勒索专题</title>
+	<script src="/static/wxb1/gk/js/jQuery-2.1.4.min.js"></script>
+	<script src="/static/wxb1/gk/bootstrap/js/bootstrap.min.js"></script>
+	<script src="/static/wxb1/gk/js/course.js"></script>
+	<script src="/static/wxb1/gk/js/echartmap/esl.js"></script>
+	<link rel="stylesheet" href="/static/wxb1/gk/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/static/wxb1/gk/css/style.css">
+	<link rel="stylesheet" href="/static/wxb1/gk/css/prepared.css">
+	<link rel="stylesheet" href="/static/wxb1/gk/font-awesome-4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="wrap_box">
+        <div class="head_nav">
+           <ul class="head_nav wrap_catalog_box head-width">
+              <!-- <a href="/appo/wxb1/gk/page/enter/safeevent">
+                <li class="headfirst">我的课程</li>
+              </a> -->
+              <li class="headfirst">web专题</li>
+              <li class="active">
+                <a href="/appo/wxb1/gk/index">攻击过程展示</a>
+              </li>
+              <li >
+                <a href="/appo/wxb1/gk/page/class/alert1">预警和预防</a>
+              </li>
+              <li>
+                <a href="/appo/wxb1/gk/page/class/prepared1">应急处置</a>
+              </li>
+              <li>
+                <a href="/appo/wxb1/gk/page/class/force1">后期处置</a>
+              </li>
+           </ul>
+        </div>
+        <div class="page_container">
+            <div class="map-wrap">
+                <!-- <div class="mod-current map-bottom">
+                    我的位置：<a href="/appo/wxb1/gk/page/enter/safeevent">安全威胁仿真></a><a href="new51.html">漏洞攻击事件</a>
+                    我的位置：<a href="../enter/safeevent.html">安全威胁仿真></a><a href="/appo/wxb1/gk/page/class/new51">漏洞攻击事件</a>
+                    <a href="/appo/wxb1/gk/page/enter/safeevent"> <span class="span">返回课程首页>></span></a>
+                </div> -->
+                <div class="wrap_catalog_box classification">
+                  <ul class="classification-bd">
+                   <li class="bd-first">
+                        <a href="/appo/wxb1/gk/index">
+                          <span>一、邮件钓鱼攻击</span>
+                        </a>
+                      </li>
+                      <li class="bd-second ">
+                        <a href="/appo/wxb1/gk/page/class/mapTarget">
+                         <span>二、木马获取权限</span>
+                        </a>
+                      </li>
+                      <li class="bd-third">
+                        <a href="/appo/wxb1/gk/page/class/topoFinally">
+                          <span>三、登陆后台实施篡改</span>
+                        </a>
+                      </li>
+                      <li class="bd-four shadow">
+                        <a href="/appo/wxb1/gk/page/class/new51">
+                          <span>四、篡改成功</span>
+                        </a>
+                      </li>
+                  </ul>
+                </div>
+                <div class="classification-color3"></div>
+                <div class="map-main">
+                    <div class="row">
+                      <div class="col-xs-9 con-sm-9">
+                        <div id="backImg" style="height:590px;width:1000px;background-image:url('/static/wxb1/gk/img/1.4.png');">
+                        <div id="main1111" style="height:590px;width:1000px"></div>
+                      </div>
+                      </div>
+                      <div class="col-xs-3 con-sm-3 map-bd">
+                        <div class="map-txt">
+                          <p>内网蔓延</p>
+                           <!--攻击者尝试登陆失败后，通过在互联网查找发现mysql数据库5.5.52版本存在一个编号为cve-2016-6662的高危漏洞,转向漏洞利用攻击。攻击者通过sql注入的方式修改mysql数据库的配置文件my.cnf，修改成功后攻击者获取该数据库的root权限，实现对该数据库的远程控制。-->
+
+                          <div class="map-but">
+                            <a href="/appo/wxb1/gk/page/class/topoFinally" style="display:none">
+                              <button type="button" class="btn btn-primary">上一步</button>
+                            </a>
+                            <a href="/appo/wxb1/gk/page/class/new61" style="display:none">
+                              <button type="button" class="btn btn-primary ">下一步</button>
+                            </a>
+                          </div>
+                          
+                        </div>
+                      </div>
+                    </div>
+                    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+                  
+                </div>
+                <!-- <div class="map-txt text_ellipsis"></div> -->
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    require.config({
+            paths: {
+                'echarts': 'wxb1/gk/js/echartmap/echarts',
+                'echarts/chart/map': 'wxb1/gk/js/echartmap/map'
+            }
+        });
+   // 使用
+        require(
+            [
+                'echarts',
+                'echarts/chart/map' // 使用柱状图就加载bar模块，按需加载
+            ],
+            function (ec) {
+                require('echarts/util/mapData/params').params.ship = {
+                    getGeoJson: function (callback) {
+                        $.ajax({
+                            url: "/static/wxb1/gk/svg/topo_1000_590.svg",
+                            dataType: 'xml',
+                            success: function (xml) {
+                                callback(xml)
+                            }
+                        });
+                    }
+                }
+                // 基于准备好的dom，初始化echarts图表
+                var myChart = ec.init(document.getElementById('main'));
+ 
+                var option = {
+                    
+                    series: [
+                       
+                        {
+                            name: '黑客攻击线路图',
+                            type: 'map',
+                            mapType: 'ship',
+                            roam: false,
+                            itemStyle: {
+                               
+                            },
+                            data: [],
+                             geoCoord: {
+                                '攻击者':[180,230],
+                                '网页1':[425,230],
+                                '网页2':[520,230],
+                                '用户机1':[620,230],
+                                '用户机2':[780,230],
+                                'web服务器':[880,230],
+                            },
+                            markPoint: {
+                                symbol:'circle',
+                                symbolSize : 2,
+                                
+
+                                effect : {
+                                    show: false,
+                                    shadowBlur : 5
+                                },
+                                itemStyle:{
+
+                                    normal:{
+                                        color:'black',
+                                        /*label:{ 
+                                        color:'black',
+                                        formatter:'{b}'}*/
+                                    },
+                                    emphasis: {
+                                        //label:{position:'top'},
+                                        color:'blue',
+                                    }
+                                },
+                                data: [
+                                    
+                                   
+                                ]
+                            },
+                            markLine: {
+                                 
+                                 effect: {
+                                    show: true,
+                                    scaleSize: 1.5,
+                                    period: 4,
+                                    color: 'black',
+                                    shadowBlur: 10,
+                                },
+                                smooth:true,
+                                
+                                itemStyle: {
+                                       normal: {
+                                                borderWidth:2,
+                                                label: {
+                                                    show: false
+                                                },
+                                                lineStyle: {
+                                                    type: 'solid',
+                                                    shadowBlur: 1,
+                                                    color: 'rgba(255, 0, 0, 0.9)',
+
+                                                }
+                                            }
+                                },
+                                data: [
+                                  [
+                                        { name: '攻击者' , smoothness:0},
+                                        { name: '网页1' }
+                                    ],
+                                    [
+                                        { name: '网页2' , smoothness:0},
+                                        { name: '用户机1' }
+                                    ],
+                                    [
+                                        { name: '用户机2' , smoothness:0},
+                                        { name: 'web服务器' }
+                                    ]    
+                                ]
+                            }
+                        },
+                       
+                   
+                    ]
+                };
+ 
+                // 为echarts对象加载数据 
+                myChart.setOption(option);
+            });
+
+</script>
+</html>

@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE-edge,chrome=1">
+	<meta name="viewport" content="width=1366">
+	<title>勒索专题</title>
+	<script src="/static/wxb1/lesuo/js/jQuery-2.1.4.min.js"></script>
+	<script src="/static/wxb1/lesuo/bootstrap/js/bootstrap.min.js"></script>
+	<script src="/static/wxb1/lesuo/js/course.js"></script>
+	<script src="/static/wxb1/lesuo/js/echartmap/echarts-all.js"></script>
+	<link rel="stylesheet" href="/static/wxb1/lesuo/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/static/wxb1/lesuo/css/style.css">
+	<link rel="stylesheet" href="/static/wxb1/lesuo/css/class.css">
+	<link rel="stylesheet" href="/static/wxb1/lesuo/font-awesome-4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="wrap_box">
+       
+        <div class="head_nav">
+           <ul class="head_nav wrap_catalog_box head-width">
+              <!-- <a href="/appo/wxb1/lesuo/page/enter/safeevent">
+                <li class="headfirst">我的课程</li>
+              </a> -->
+              <li class="headfirst">勒索专题</li>
+              <li class="active">
+                <a href="/appo/wxb1/lesuo/index">攻击过程展示</a>
+              </li>
+              <li >
+                <a href="/appo/wxb1/lesuo/page/class/alert1">预警和预防</a>
+              </li>
+              <li>
+                <a href="/appo/wxb1/lesuo/page/class/prepared1">应急处置</a>
+              </li>
+              <li>
+                <a href="/appo/wxb1/lesuo/page/class/force1">后期处置</a>
+              </li>
+              <li class="right">
+                <a href="/appo/wxb1/index"><button type="button" class="btn btn-default">返回首页</button></a>
+              </li>
+           </ul>
+        </div>
+        <div class="page_container map-bottom">
+            <div class="map-wrap">
+                <!-- <div class="mod-current">
+                    我的位置：<a href="/appo/wxb1/lesuo/page/enter/safeevent">安全扫描仿真></a><a href="">网络扫描事件</a>
+/static/ /static/ /static/ /static/ /static/ /static/ /static/ /static/ /static/ /static/ /static/ /static/ /static/ /static/ /static/ /static/ /static/ /static/ /static/ /static/ /static/我/static/的/static/位/static/置/static/：/static/</static/a/static/ /static/h/static/r/static/e/static/f/static/=/static/"/static/./static/./static///static/e/static/n/static/t/static/e/static/r/static///static/s/static/a/static/f/static/e/static/e/static/v/static/e/static/n/static/t/static/./static/h/static/t/static/m/static/l/static/"/static/>/static/安/static/全/static/扫/static/描/static/仿/static/真/static/>/static/</static///static/a/static/>/static/</static/a/static/ /static/h/static/r/static/e/static/f/static/=/static/"/static/"/static/>/static/网/static/络/static/扫/static/描/static/事/static/件/static/</static///static/a/static/>/static/
+/static/                    <a href="/appo/wxb1/lesuo/page/enter/safeevent"> <span class="span">返回课程首页>></span></a>
+                </div> -->
+                <div class="wrap_catalog_box classification">
+                    <ul class="classification-bd">
+                      <li class="bd-first">
+                        <a href="/appo/wxb1/lesuo/index">
+                          <span>一、攻击者潜伏</span>
+                        </a>
+                      </li>
+                      <li class="bd-second shadow">
+                        <a href="/appo/wxb1/lesuo/page/class/mapTarget">
+                         <span>二、高危端口攻击</span>
+                        </a>
+                      </li>
+                      <li class="bd-third">
+                        <a href="/appo/wxb1/lesuo/page/class/topoFinally">
+                          <span>三、上传病毒实施攻击</span>
+                        </a>
+                      </li>
+                      <li class="bd-four">
+                        <a href="/appo/wxb1/lesuo/page/class/new51">
+                          <span>四、内网蔓延</span>
+                        </a>
+                      </li>
+                      <li class="bd-five">
+                        <a href="/appo/wxb1/lesuo/page/class/new61">
+                          <span>五、加密并勒索数据</span>
+                        </a>
+                      </li>
+                    </ul>
+                </div>
+                <div class="classification-color1"></div>
+                <div class="map-main">
+                    <div class="row">
+                      <div class="col-xs-9 con-sm-9">
+                        <div id="main" style="height:590px;width:1000px">
+                        </div>
+                      </div>
+                      <div class="col-xs-3 con-sm-3 map-bd">
+                        <div class="map-txt">
+                            <p> 探测并锁定目标：</p>
+                            攻击者利用工具在互联网世界中发动寻找开放高危端口445目标的扫描，发现开放目标并锁定。已感染目标会成为病毒源，攻击其他目标。
+                       <div class="point">
+                      
+                        <span class="span-ti">445端口是什么端口？</span>
+                        <span class="span-tet">445端口是一个毁誉参半的端口，有了它我们可以在局域网中轻松访问各种共享文件夹或共享打印机，但也正是因为有了它，黑客们才有了可乘之机。</span>
+                    </div>
+                            <div class="map-but">
+                                <a href="/appo/wxb1/lesuo/index" style="display:none">
+                                  <button type="button" class="btn btn-primary">上一步</button>
+                                </a>
+                                <a href="/appo/wxb1/lesuo/page/class/topoFinally" style="display:none">
+                                  <button type="button" class="btn btn-primary">下一步</button>
+                                </a>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+       // 基于准备好的dom，初始化echarts图表
+        var myChart = echarts.init(document.getElementById('main')); 
+        
+        var option = {
+            backgroundColor: 'lightskyblue',
+            
+            title : {
+                text: '',
+                //subtext:'数据纯属虚构',
+                x:'center',
+                textStyle : {
+                    color: '#222'
+                }
+            },
+            tooltip : {
+                trigger: 'item',
+                
+                formatter: '{a}<br/>{b}',
+            },
+         
+            series : [
+                {
+                    name: '被扫描',
+                    type: 'map',
+                    roam: false,
+                    hoverable: false,
+                    mapType: 'world',
+                    itemStyle:{
+                        normal:{
+
+                            borderColor:'rgba(100,149,237,1)',
+                            borderWidth:0.5,
+                            areaStyle:{
+                                color: '#eee'
+                            }
+                        }
+                    },
+                    data:[],
+                    markLine : {
+                        smooth:true,
+                        symbol: ['none', 'circle'],  
+                        symbolSize : 1,
+                        itemStyle : {
+                            normal: {
+                                color:'red',
+                                borderWidth:1,
+                                borderColor:'rgba(30,144,255,0.5)'
+                            }
+                        },
+                        data : [
+                            
+                           
+                                               
+                            
+                        ],
+                    },
+                    markPoint : {
+                        symbol:'circle',
+                        symbolSize : 5,
+                        
+
+                        effect : {
+                            show: true,
+                            shadowBlur : 5
+                        },
+                        itemStyle:{
+
+                            normal:{
+                                label:{ color:'yellow',}
+                            },
+                            emphasis: {
+                                label:{position:'top'},
+                                color:'blue',
+                            }
+                        },
+                        data : [
+                          
+                              {name:'目标1'},
+                            {name:'目标2'},
+                            {name:'目标3'},
+                            {name:'目标4'},
+                            //{name:'目标5'},
+                            {name:'目标6'},
+                            {name:'目标7'},
+                            {name:'目标8'},
+                            {name:'目标9'},
+                            //{name:'目标20'},
+                            {name:'目标11'},
+                            {name:'目标12'},
+                            //{name:'目标13'},
+                            {name:'目标14'},
+                            {name:'目标15'},
+                            {name:'目标16'},
+                            {name:'目标17'},
+                            {name:'目标18'},
+                            {name:'目标19'},
+                            //{name:'目标20'},
+                            {name:'目标21'},
+                            {name:'目标22'},
+                           // {name:'目标23'},
+                            {name:'目标24'},
+                            {name:'目标25'},
+
+                           
+                          
+                        ]
+                    },
+                    geoCoord: {
+                        '54.254.234.211':[-103.796283,40.791032],
+                        '61.38.252.23':[142.874673,43.848474],
+                        '91.238.29.192':[37.568546,55.746359],
+                        '94.23.200.49':[127.374951,-21.120664],
+                        '177.87.241.226':[-42.910429,-11.031878],
+                       
+                        '目标1':[-128.071516,57.072151],
+                        '目标2':[-95.011574,64.938817],
+                        '目标3':[-69.10818,51.184949],
+                        '目标4':[-86.033693,33.834864],
+                        '目标5':[-94.864395,32.223162],
+                        '目标6':[-16.123965,65.310716],
+                        '目标7':[-7.881976,14.091232],
+                        '目标8':[-65.134364,8.42737],
+                        '目标9':[-66.606147,-31.196211],
+                        '目标10':[126.786237,39.748183],
+                        '目标11':[137.677437,50.532871],
+                        '目标12':[122.370886,43.394045],
+                        '目标13':[131.05441,33.34213],
+                        
+                        '目标14':[19.787559,67.207944],
+                        '目标15':[83.07426,56.32316],
+                        '目标16':[62.322109,69.385256],
+                        '目标17':[43.336099,35.175127],
+                        
+
+                        '目标18':[142.681502,-4.724373],
+                        '目标19':[147.538388,-35.997263],
+                        '目标20':[100.29413,15.094594],
+                        '目标21':[24.40528,-29.117925],
+                        '目标22':[-67.636396,-47.816212],
+                        '目标23':[-116.499616,35.657077],
+                        '目标24':[-63.073866,6.664872],
+                        '目标25':[-40.261218,-16.922156],
+                        'warning':[59.3646,-12.521875],
+
+                        '上海': [121.4648,31.2891],
+                        
+                        '北京': [116.4551,40.2539],
+                       
+                        'XX高校IP: 58.61.200.17': [113.5107,23.2196],
+
+                        '校园网络': [113.5107,23.2196],
+                      
+                    }
+                },
+
+
+                {
+                    name: '发动扫描IP',
+                    type: 'map',
+                    mapType: 'world',
+                    data:[],
+                   markLine : {
+                        smooth:true,
+                        effect : {
+                            show: true,
+                            scaleSize: 1.2,
+                            period: 10,
+                            color: 'red',
+                            shadowBlur: 2
+                        },
+                        itemStyle : {
+                            normal: {
+
+                                borderWidth:1,
+                                lineStyle: {
+                                    type: 'dashed',
+                                    shadowBlur: 10,
+                                    color:'red'
+                                }
+                            }
+                        },
+                        data : [
+                            [{name:'54.254.234.211'},{name:'目标1'}],
+                            [{name:'54.254.234.211'},{name:'目标2'}],
+                            [{name:'54.254.234.211'},{name:'目标3'}],
+                            [{name:'54.254.234.211'},{name:'目标4'}],
+                            [{name:'54.254.234.211'},{name:'目标5'}],
+                            [{name:'54.254.234.211'},{name:'目标6'}],
+                            [{name:'54.254.234.211'},{name:'目标7'}],
+                            [{name:'54.254.234.211'},{name:'目标8'}],
+                            [{name:'54.254.234.211'},{name:'目标9'}],
+                           [{name:'54.254.234.211'},{name:'XX高校IP: 58.61.200.17'}],
+                            [{name:'54.254.234.211'},{name:'目标10'}],
+                            [{name:'54.254.234.211'},{name:'目标11'}],
+                            [{name:'54.254.234.211'},{name:'目标12'}],
+                            [{name:'54.254.234.211'},{name:'目标13'}],
+                            [{name:'54.254.234.211'},{name:'61.38.252.23'}],
+                            [{name:'54.254.234.211'},{name:'94.23.200.49'}],
+                            [{name:'54.254.234.211'},{name:'91.238.29.192'}],
+                            [{name:'54.254.234.211'},{name:'177.87.241.226'}],
+
+
+                           /* [{name:'54.254.234.211'},{name:'目标14'}],
+                            [{name:'54.254.234.211'},{name:'目标15'}],
+                            [{name:'54.254.234.211'},{name:'目标16'}],
+                            [{name:'54.254.234.211'},{name:'目标17'}],
+
+                            [{name:'54.254.234.211'},{name:'目标21'}],
+                            [{name:'54.254.234.211'},{name:'目标18'}],
+                            [{name:'54.254.234.211'},{name:'目标19'}],
+                           // [{name:'54.254.234.211'},{name:'目标20'}],*/
+
+                            [{name:'54.254.234.211'},{name:'目标22'}],
+                            //[{name:'54.254.234.211'},{name:'目标23'}],
+                            [{name:'54.254.234.211'},{name:'目标24'}],
+                            [{name:'54.254.234.211'},{name:'目标25'}],
+
+                          
+                        ]
+                    },
+                    markPoint : {
+                        symbol:'emptyCircle',
+                        symbolSize : 30,
+
+                        effect : {
+                            show: true,
+                            shadowBlur : 5
+                        },
+                        itemStyle:{
+
+                            normal:{
+                                label:{show:false,
+                                    formatter:'{a}',
+                                    textStyle:{
+                                        color:'black',
+                                    },
+                                    },
+                                color:'red',
+                            },
+                            emphasis: {
+                                label:{show:false,position:'top'},
+                                color:'red',
+                            }
+                        },
+                        data : [
+                          
+                            {name:'校园网络'},
+                          
+                        ]
+                    }
+                },
+              
+              {
+                    name: '攻击者',
+                    type: 'map',
+                    mapType: 'world',
+                    data:[],
+                     markLine : {
+                        smooth:true,
+                        effect : {
+                            show: true,
+                            scaleSize: 1,
+                            period: 4,
+                            color: 'red',
+                            shadowBlur: 10
+                        },
+                        itemStyle : {
+                            normal: {
+                               
+                                borderWidth:3,
+                                lineStyle: {
+                                    type: 'solid',
+                                    shadowBlur: 20,
+                                    color:'black'
+                                }
+                            }
+                        },
+                        data : [
+                            [{name:'54.254.234.211',value:0},{name:'XX高校IP: 58.61.200.17'}],
+                            
+                            
+                        ]
+                    },
+                    
+                    markPoint : {
+                       symbol:'image://../../img/attacker.png',
+                        symbolSize : 50,
+
+                       
+                        data : [
+                          
+                            {name:'54.254.234.211'},
+                          
+                          
+                        ]
+                    }
+                },
+                   {
+                    name: '',
+                    type: 'map',
+                    mapType: 'world',
+                    data:[],
+                    
+                    
+                    markPoint : {
+                       symbol:'image://../../img/warning.png',
+                        symbolSize : 80,
+
+                       
+                        data : [
+                          
+                            {name:'warning'},
+                          
+                          
+                        ]
+                    }
+                },
+                {
+                    name: '',
+                    type: 'map',
+                    mapType: 'world',
+                    data:[],
+
+                    markLine : {
+                        smooth:true,
+                        effect : {
+                            show: true,
+                            scaleSize: 1,
+                            period: 4,
+                            color: 'black',
+                            shadowBlur: 1
+                        },
+                        itemStyle : {
+                            normal: {
+                               
+                                borderWidth:3,
+                                lineStyle: {
+                                    type: 'solid',
+                                    shadowBlur: 20,
+                                    color:'red'
+                                }
+                            }
+                        },
+                        data : [
+                            [{name:'XX高校IP: 58.61.200.17'},{name:'54.254.234.211',value:0}],
+                            
+                            
+                        ]
+                    },
+                    
+                    markPoint : {
+                        
+                        symbol:'image://../../img/school2.png',
+                        symbolSize : 50,
+
+                     
+                        data : [
+                          
+                            {name:'XX高校IP: 58.61.200.17'},
+                           
+                          
+                        ]
+                    }
+                },
+
+                {
+                    name: '',
+                    type: 'map',
+                    mapType: 'world',
+                    data:[],
+
+                    markLine : {
+                        smooth:true,
+                        effect : {
+                            show: true,
+                            scaleSize: 1,
+                            period: 4,
+                            color: 'black',
+                            shadowBlur: 1
+                        },
+                        itemStyle : {
+                            normal: {
+                               
+                                borderWidth:3,
+                                lineStyle: {
+                                    type: 'solid',
+                                    shadowBlur: 20,
+                                    color:'red'
+                                }
+                            }
+                        },
+                        data : [
+                    [{name:'61.38.252.23'},{name:'目标10'}],
+                    [{name:'61.38.252.23'},{name:'目标11'}],
+                    [{name:'61.38.252.23'},{name:'目标12'}],
+                    [{name:'61.38.252.23'},{name:'目标13'}],
+
+                    [{name:'91.238.29.192'},{name:'目标14'}],
+                    [{name:'91.238.29.192'},{name:'目标15'}],
+                    [{name:'91.238.29.192'},{name:'目标16'}],
+                    [{name:'91.238.29.192'},{name:'目标17'}],
+
+                    [{name:'94.23.200.49'},{name:'目标21'}],
+                    [{name:'94.23.200.49'},{name:'目标18'}],
+                    [{name:'94.23.200.49'},{name:'目标19'}],
+                    [{name:'94.23.200.49'},{name:'目标20'}],
+                            
+                            
+                        ]
+                    },
+                    
+                    markPoint : {
+                        
+                        symbol:'emptyCircle',
+                        symbolSize : 10,
+
+                        effect : {
+                            show: true,
+                            shadowBlur : 5
+                        },
+                        itemStyle:{
+
+                            normal:{
+                                label:{show:false,
+                                    formatter:'{a}',
+                                    textStyle:{
+                                        color:'black',
+                                    },
+                                    },
+                                color:'red',
+                            },
+                            emphasis: {
+                                label:{show:false,position:'top'},
+                                color:'red',
+                            }
+                        },
+
+                     
+                        data : [
+                          
+                            {name:'61.38.252.23'},
+                            {name:'91.238.29.192'},
+                            {name:'94.23.200.49'},
+                           
+                          
+                        ]
+                    }
+                },
+
+
+
+                          
+
+            ]
+        }
+                            
+
+        // 为echarts对象加载数据 
+        myChart.setOption(option); 
+</script>
+</html>

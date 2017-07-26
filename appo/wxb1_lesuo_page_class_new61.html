@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE-edge,chrome=1">
+	<meta name="viewport" content="width=1366">
+	<title>勒索专题</title>
+	<script src="/static/wxb1/lesuo/js/jQuery-2.1.4.min.js"></script>
+  <script src="/static/wxb1/lesuo/js/jquery.cookie.js"></script>
+	<script src="/static/wxb1/lesuo/bootstrap/js/bootstrap.min.js"></script>
+	<script src="/static/wxb1/lesuo/js/course.js"></script>
+	<script src="/static/wxb1/lesuo/js/echartmap/esl.js"></script>
+	<link rel="stylesheet" href="/static/wxb1/lesuo/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/static/wxb1/lesuo/css/style.css">
+	<link rel="stylesheet" href="/static/wxb1/lesuo/css/class.css">
+	<link rel="stylesheet" href="/static/wxb1/lesuo/font-awesome-4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+    <div class="wrap_box">
+        <div class="head_nav">
+           <ul class="head_nav wrap_catalog_box head-width">
+              <!-- <a href="/appo/wxb1/lesuo/page/enter/safeevent">
+                <li class="headfirst">我的课程</li>
+              </a> -->
+              <li class="headfirst">勒索专题</li>
+              <li class="active">
+                <a href="/appo/wxb1/lesuo/index">攻击过程展示</a>
+              </li>
+              <li >
+                <a href="/appo/wxb1/lesuo/page/class/alert1">预警和预防</a>
+              </li>
+              <li>
+                <a href="/appo/wxb1/lesuo/page/class/prepared1">应急处置</a>
+              </li>
+              <li>
+                <a href="/appo/wxb1/lesuo/page/class/force1">后期处置</a>
+              </li>
+              <li class="right">
+                <a href="/appo/wxb1/index"><button type="button" class="btn btn-default">返回首页</button></a>
+              </li>
+           </ul>
+        </div>
+        <div class="page_container">
+            <div class="map-wrap">
+                <div class="wrap_catalog_box classification">
+                  <ul class="classification-bd">
+                   <li class="bd-first">
+                        <a href="/appo/wxb1/lesuo/index">
+                          <span>一、攻击者潜伏</span>
+                        </a>
+                      </li>
+                      <li class="bd-second ">
+                        <a href="/appo/wxb1/lesuo/page/class/mapTarget">
+                         <span>二、高危端口攻击</span>
+                        </a>
+                      </li>
+                      <li class="bd-third">
+                        <a href="/appo/wxb1/lesuo/page/class/topoFinally">
+                          <span>三、上传病毒实施攻击</span>
+                        </a>
+                      </li>
+                      <li class="bd-four">
+                        <a href="/appo/wxb1/lesuo/page/class/new51">
+                          <span>四、内网蔓延</span>
+                        </a>
+                      </li>
+                      <li class="bd-five shadow">
+                        <a href="/appo/wxb1/lesuo/page/class/new61">
+                          <span>五、加密并勒索数据</span>
+                        </a>
+                      </li>
+                  </ul>
+                </div>
+                <div class="classification-color4"></div>
+                <div class="map-main">
+                    <div class="row">
+                      <div class="col-xs-9 con-sm-9">
+                        <div id="backImg" style="height:590px;width:1000px;background-image:url('/static/wxb1/lesuo/img/lock.png');background-repeat:no-repeat;background-size:100% 100%;">
+                        <div id="main1111" style="height:590px;width:1000px"></div>
+                      </div>
+                      </div>
+                      <div class="col-xs-3 con-sm-3 map-bd">
+                        <div class="map-txt">
+                          <p>加密过程</p>
+                            
+1）木马随机生成一个256字节的密钥，并拷贝一份用RSA2048加密，RSA公钥内置于程序中。<br>
+2）构造文件头，文件头中包含有标志、密钥大小、RSA加密过的密钥、文件大小等信息。<br>
+3）使用CBC模式AES加密文件内容，并将文件内容写入到构造好的文件头后，保存成扩展名为.WNCRY的文件，并用随机数填充原始文件后再删除，防止数据恢复。<br>
+4）完成所有文件加密后释放说明文档，弹出勒索界面，需支付价值数百美元不等的比特比到指定的比特比钱包地址，三个比特币钱包地址硬编码于程序中。
+                          <div class="map-but">
+                            <a href="/appo/wxb1/lesuo/page/class/new51" style="display:none">
+                              <button type="button" class="btn btn-primary">上一步</button>
+                            </a>
+                            <a href="/appo/wxb1/lesuo/page/class/port1" style="display:none">
+                              <button id='cookie' type="button" class="btn btn-primary btn-warning">进行处理</button>
+                            </a>
+                           <!-- <button id='cookie' type="button" class="btn btn-primary btn-warning">进入安全业务仿真</button>-->
+                          </div>
+                          
+                        </div>
+                      </div>
+                    </div>
+                    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+                </div>
+                <!-- <div class="map-txt text_ellipsis"></div> -->
+            </div>
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript">
+   //$.cookie('f1', 'test',{expires:7,path:'/'});
+
+
+
+  $("#cookie").click(function(){
+
+   $.cookie('s1',0);
+   $.cookie('s2',0);
+   $.cookie('f1',0);
+   $.cookie('f2',0);
+   $.cookie('w1',0);
+   $.cookie('w2',0);
+   $.cookie('i1',0);
+   $.cookie('i2',0);
+  
+
+  });
+
+
+</script>
+
+<script type="text/javascript">
+    require.config({
+            paths: {
+                'echarts': 'wxb1/gk/js/echartmap/echarts',
+                'echarts/chart/map': 'wxb1/gk/js/echartmap/map'
+            }
+        });
+   // 使用
+        require(
+            [
+                'echarts',
+                'echarts/chart/map' // 使用柱状图就加载bar模块，按需加载
+            ],
+            function (ec) {
+                require('echarts/util/mapData/params').params.ship = {
+                    getGeoJson: function (callback) {
+                        $.ajax({
+                            url: "/static/wxb1/lesuo/svg/topo_1000_590.svg",
+                            dataType: 'xml',
+                            success: function (xml) {
+                                callback(xml)
+                            }
+                        });
+                    }
+                }
+                // 基于准备好的dom，初始化echarts图表
+                var myChart = ec.init(document.getElementById('main'));
+ 
+                var option = {
+                    
+                    series: [
+                       
+                        {
+                            name: '黑客攻击线路图',
+                            type: 'map',
+                            mapType: 'ship',
+                            roam: false,
+                            itemStyle: {
+                               
+                            },
+                            data: [],
+                             geoCoord: {
+                                '攻击者1':[160,170],
+                                '运营商网络1':[625,230],
+                                 '运营商网络2':[625,230],
+                                 '防火墙1':[530,290],
+                                 '防火墙2':[482,315],
+                                 '核心路由器1':[415,358],
+                                 '核心路由器2':[429,429],
+                                 '交换机1':[566,480],
+                                 '交换机2':[620,495],
+                                
+                                 //'交换机5':[910,130],
+                                 '服务器1':[789,398],
+                                 'ciso':[900,500],
+
+                                   '攻击者1_2':[160,145],
+                                '运营商网络1_2':[625,205],
+                                 '运营商网络2_2':[635,260],
+                                 '防火墙1_2':[550,315],
+                                 '防火墙2_2':[490,350],
+                                 '核心路由器1_2':[435,390],
+                                 //'核心路由器2_2':[430,168],
+                                 '交换机1_2':[570,445],
+                                 '交换机2_2':[625,450],
+                                 '交换机3_2':[770,365],
+                                 '交换机4_2':[790,355],
+                                 //'交换机5_2':[870,100],
+                                 '服务器1_2':[789,348],
+                                 'mid1':[340,168],
+                                 'mid2':[420,180],
+
+
+
+                              
+
+                            },
+                            
+                             markLine: {
+                                 
+                                 effect: {
+                                    show: true,
+                                    scaleSize: 1.5,
+                                    period: 5,
+                                    color: 'red',
+                                    shadowBlur: 2,
+                                },
+                                smooth:true,
+                                
+                                itemStyle: {
+                                       normal: {
+                                                borderWidth:3,
+                                                label: {
+                                                    show: false
+                                                },
+                                                lineStyle: {
+                                                    type: 'solid',
+                                                    shadowBlur: 1,
+                                                    color: 'rgba(0, 200, 255, 0.8)',
+
+                                                }
+                                            }
+                                },
+                                data: [
+                                   
+                                  [
+                                        { name: '运营商网络1_2' , smoothness:0},
+                                        { name: 'mid2' }
+                                    ],
+                                    [
+                                        { name: 'mid1' , smoothness:0},
+                                        { name: '攻击者1_2' }
+                                    ],
+                                    [
+                                        { name: '防火墙1_2' , smoothness:0},
+                                        { name: '运营商网络2_2' }
+                                    ],
+                                     [
+                                        { name: '核心路由器1_2', smoothness:0 },
+                                        { name: '防火墙2_2' }
+                                    ],
+                                     [
+                                        { name: '交换机1_2', smoothness:0 },
+                                        { name: '核心路由器1_2' }
+                                    ],
+                                   
+                                    [
+                                        { name: '服务器1_2', smoothness:0 },
+                                        { name: '交换机2_2'}
+                                    ],
+                                     
+                                ]
+                            },
+                         
+                        },
+                          
+                       
+                   
+                    ]
+                };
+ 
+                // 为echarts对象加载数据 
+                myChart.setOption(option);
+               
+
+
+            }
+
+
+
+
+        );
+
+</script>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE-edge,chrome=1">
+	<meta name="viewport" content="width=1366">
+	<title>网页篡改事件</title>
+	<script src="/static/wxb1/web/js/jQuery-2.1.4.min.js"></script>
+  <script src="/static/wxb1/web/bootstrap/js/bootstrap.min.js"></script>
+  <script src="/static/wxb1/web/js/course.js"></script>
+  <script src="/static/wxb1/web/js/echartmap/esl.js"></script>
+  <link rel="stylesheet" href="/static/wxb1/web/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/wxb1/web/css/style.css">
+  <link rel="stylesheet" href="/static/wxb1/web/css/classalert.css">
+  <link rel="stylesheet" href="/static/wxb1/web/font-awesome-4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="wrap_box">
+        <div class="head_nav">
+           <ul class="head_nav wrap_catalog_box head-width">
+              <!-- <a href="/appo/wxb1/web/page/enter/safeevent">
+                <li class="headfirst">我的课程</li>
+              </a> -->
+              <li class="headfirst">网页篡改事件</li>
+              <li>
+                <a href="/appo/wxb1/web/index">攻击过程展示</a>
+              </li>
+              <li class="active">
+                <a href="/appo/wxb1/web/page/class/alert1">预警和预防</a>
+              </li>
+              <li>
+                <a href="/appo/wxb1/web/page/class/prepared1">应急处置</a>
+              </li>
+              <li>
+                <a href="/appo/wxb1/web/page/class/force1">后期处置</a>
+              </li>
+              <li class="right">
+                <a href="/appo/wxb1/index"><button type="button" class="btn btn-default">返回首页</button></a>
+              </li>
+           </ul>
+        </div>
+        <div class="page_container map-bottom">
+            <div class="map-wrap">
+              <div class="wrap_catalog_box classification">
+                <ul class="classification-bd">
+                  <li class="bd-first shadow">
+                    <a href="/appo/wxb1/web/page/class/alert1">
+                      <span>一.信息监测</span>
+                    </a>
+                  </li>
+                  <li class="bd-second ">
+                    <a href="/appo/wxb1/web/page/class/alert2">
+                      <span>二.日常备份</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="classification-color"></div>
+              <div class="map-main">
+                <div class="row">
+                  <div class="col-xs-9 con-sm-9">
+                   <div id="backImg" style="height:590px;width:1000px;background-image:url('/static/wxb1/web/img/2.1.png');">
+                          <div id="main" style="height:590px;width:1000px"></div>
+                        </div>
+                  </div>
+                  <div class="col-xs-3 con-sm-3 map-bd">
+                    <div class="map-txt">
+                      <p>信息监测及报告
+</p>
+                         通过监控设备或脚本，或人工监控，及时发现网站的异常情况，当网页被篡改时，立即上级和监管机构报告。
+
+                     
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>   
+</body>
+<script type="text/javascript">
+    require.config({
+            paths: {
+                'echarts': 'wxb1/gk/js/echartmap/echarts',
+                'echarts/chart/map': 'wxb1/gk/js/echartmap/map'
+            }
+        });
+   // 使用
+        require(
+            [
+                'echarts',
+                'echarts/chart/map' // 使用柱状图就加载bar模块，按需加载
+            ],
+            function (ec) {
+                require('echarts/util/mapData/params').params.ship = {
+                    getGeoJson: function (callback) {
+                        $.ajax({
+                            url: "/static/wxb1/web/svg/topo_1000_590.svg",
+                            dataType: 'xml',
+                            success: function (xml) {
+                                callback(xml)
+                            }
+                        });
+                    }
+                }
+                // 基于准备好的dom，初始化echarts图表
+                var myChart = ec.init(document.getElementById('main'));
+ 
+                var option = {
+                    
+                    series: [
+                       
+                        {
+                            name: '黑客攻击线路图',
+                            type: 'map',
+                            mapType: 'ship',
+                            roam: false,
+                            itemStyle: {
+                               
+                            },
+                            data: [],
+                             geoCoord: {
+                                '网站':[240,300],
+                                '脚本监控1':[440,300],
+                                '脚本监控2':[540,300],
+                                '人工监控1':[440,150],
+                                '人工监控2':[540,150],
+                                '安全设备监控1':[440,450],
+                                '安全设备监控2':[540,450],
+                                'A单位':[740,300],
+                            },
+                            markPoint: {
+                                symbol:'circle',
+                                symbolSize : 2,
+                                
+
+                                effect : {
+                                    show: false,
+                                    shadowBlur : 5
+                                },
+                                itemStyle:{
+
+                                    normal:{
+                                        color:'black',
+                                        /*label:{ 
+                                        color:'black',
+                                        formatter:'{b}'}*/
+                                    },
+                                    emphasis: {
+                                        //label:{position:'top'},
+                                        color:'blue',
+                                    }
+                                },
+                                data: [
+                                    
+                                   
+                                ]
+                            },
+                            markLine: {
+                                 
+                                 effect: {
+                                    show: true,
+                                    scaleSize: 1.5,
+                                    period: 4,
+                                    color: 'black',
+                                    shadowBlur: 10,
+                                },
+                                smooth:true,
+                                
+                                itemStyle: {
+                                       normal: {
+                                                borderWidth:2,
+                                                label: {
+                                                    show: false
+                                                },
+                                                lineStyle: {
+                                                    type: 'solid',
+                                                    shadowBlur: 1,
+                                                    color: 'rgba(255, 0, 0, 0.9)',
+
+                                                }
+                                            }
+                                },
+                                data: [
+                                  [
+                                        { name: '网站', smoothness:0},
+                                        { name: '脚本监控1' }
+                                    ],
+                                  [
+                                        { name: '网站', smoothness:0},
+                                        { name: '人工监控1' }
+                                    ],
+                                  [
+                                        { name: '网站', smoothness:0},
+                                        { name: '安全设备监控1' }
+                                    ],
+                                   [
+                                        { name: '安全设备监控2', smoothness:0},
+                                        { name: 'A单位' }
+                                    ],
+                                    [
+                                        { name: '人工监控2', smoothness:0},
+                                        { name: 'A单位' }
+                                    ],
+                                    [
+                                        { name: '脚本监控2', smoothness:0},
+                                        { name: 'A单位' }
+                                    ],
+                                ]
+                            }
+                        },
+                       
+                   
+                    ]
+                };
+ 
+                // 为echarts对象加载数据 
+                myChart.setOption(option);
+            });
+
+</script>
+</html>
